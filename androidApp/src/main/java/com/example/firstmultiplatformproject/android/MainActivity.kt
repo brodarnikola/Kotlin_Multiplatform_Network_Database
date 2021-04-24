@@ -1,6 +1,7 @@
 package com.example.firstmultiplatformproject.android
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private val mainScope = MainScope()
 
     private lateinit var scrollToTop: FloatingActionButton
+    private lateinit var btnLogin: Button
     private lateinit var launchesRecyclerView: RecyclerView
     private lateinit var progressBarView: FrameLayout
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initializeUi() {
 
+        btnLogin = findViewById(R.id.btnLogin)
         launchesRecyclerView = findViewById(R.id.launchesListRv)
         progressBarView = findViewById(R.id.progressBar)
         swipeRefreshLayout = findViewById(R.id.swipeContainer)
@@ -58,12 +61,22 @@ class MainActivity : AppCompatActivity() {
         launchesRecyclerView.adapter = launchesRvAdapter
         launchesRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        initalizeScreenEventsListeners()
+
+        displayLaunches(false)
+    }
+
+    private fun initalizeScreenEventsListeners() {
+
+        btnLogin.setOnClickListener {
+
+        }
+
         val smoothScroller: SmoothScroller = object : LinearSmoothScroller(this@MainActivity) {
             override fun getVerticalSnapPreference(): Int {
                 return SNAP_TO_START
             }
         }
-
         scrollToTop.setOnClickListener {
             smoothScroller.setTargetPosition(0)
             (launchesRecyclerView.layoutManager as LinearLayoutManager).startSmoothScroll(smoothScroller)
@@ -73,8 +86,6 @@ class MainActivity : AppCompatActivity() {
             swipeRefreshLayout.isRefreshing = false
             displayLaunches(true)
         }
-
-        displayLaunches(false)
     }
 
     override fun onDestroy() {
