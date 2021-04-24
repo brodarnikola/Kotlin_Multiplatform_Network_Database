@@ -1,5 +1,6 @@
 package com.example.firstmultiplatformproject.android
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.example.firstmultiplatformproject.android.ui.login.LoginActivity
 import com.example.firstmultiplatformproject.shared.Greeting
 import com.example.firstmultiplatformproject.shared.SpaceXSDK
 import com.example.firstmultiplatformproject.shared.cache.DatabaseDriverFactory
@@ -69,7 +71,8 @@ class MainActivity : AppCompatActivity() {
     private fun initalizeScreenEventsListeners() {
 
         btnLogin.setOnClickListener {
-
+            val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
         }
 
         val smoothScroller: SmoothScroller = object : LinearSmoothScroller(this@MainActivity) {
