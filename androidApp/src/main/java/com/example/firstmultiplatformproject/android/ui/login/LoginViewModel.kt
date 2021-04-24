@@ -24,7 +24,11 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
         if (result is Result.Success) {
             _loginResult.value =
                 LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-        } else {
+        }
+        else if( result is Result.Failed ) {
+            _loginResult.value = LoginResult(failed = "Username can not contain test")
+        }
+        else {
             _loginResult.value = LoginResult(error = R.string.login_failed)
         }
     }

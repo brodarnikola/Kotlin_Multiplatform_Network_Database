@@ -56,6 +56,9 @@ class LoginActivity : AppCompatActivity() {
             if (loginResult.error != null) {
                 showLoginFailed(loginResult.error)
             }
+            if (loginResult.failed != null) {
+                showWrongUsernameLoginFailed(loginResult.failed)
+            }
             if (loginResult.success != null) {
                 updateUiWithUser(loginResult.success)
             }
@@ -104,13 +107,17 @@ class LoginActivity : AppCompatActivity() {
         // TODO : initiate successful logged in experience
         Toast.makeText(
             applicationContext,
-            "$welcome $displayName",
+            "$welcome $displayName!",
             Toast.LENGTH_LONG
         ).show()
     }
 
+    private fun showWrongUsernameLoginFailed(errorString: String) {
+        Toast.makeText(applicationContext, errorString, Toast.LENGTH_LONG).show()
+    }
+
     private fun showLoginFailed(@StringRes errorString: Int) {
-        Toast.makeText(applicationContext, errorString, Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, errorString, Toast.LENGTH_LONG).show()
     }
 }
 

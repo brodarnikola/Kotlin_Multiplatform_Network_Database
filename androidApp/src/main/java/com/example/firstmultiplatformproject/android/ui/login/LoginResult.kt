@@ -5,5 +5,6 @@ package com.example.firstmultiplatformproject.android.ui.login
  */
 data class LoginResult(
     val success: LoggedInUserView? = null,
-    val error: Int? = null
+    val error: Int? = null,
+    val failed: String? = null
 )
