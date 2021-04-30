@@ -6,6 +6,8 @@ plugins {
     id("com.android.library")
     kotlin("plugin.serialization")
     id("com.squareup.sqldelight")
+
+    id("kotlinx-serialization")
 }
 
 version = "1.0"
@@ -38,10 +40,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.1.1")
+                //implementation( "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC")
+
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("io.ktor:ktor-client-json:${ktorVersion}")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
             }
         }
@@ -55,6 +61,10 @@ kotlin {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
                 implementation("com.squareup.sqldelight:android-driver:$sqlDelightVersion")
+
+                implementation("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
+                implementation("com.google.android.material:material:1.3.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2")
             }
         }
         val androidTest by getting {
