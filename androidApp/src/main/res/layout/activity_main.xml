@@ -66,6 +66,27 @@
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+            app:layout_constraintBottom_toTopOf="@+id/tvDescriptionComposeHiltKMM"/>
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/tvDescriptionComposeHiltKMM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="In this next activity, I have practice hilt( DI ), compose, network(ktor) and database(sqldelight).
+            After the data has been parsed and downloaded from network, this data are saved into database."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+            app:layout_constraintBottom_toTopOf="@+id/btnHiltCompose"/>
+
+        <Button
+            android:id="@+id/btnHiltCompose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hilt, compose example"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionComposeHiltKMM"
             app:layout_constraintBottom_toTopOf="@+id/swipeContainer"/>
 
 
@@ -76,7 +97,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+            app:layout_constraintTop_toBottomOf="@+id/btnHiltCompose">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/launchesListRv"
