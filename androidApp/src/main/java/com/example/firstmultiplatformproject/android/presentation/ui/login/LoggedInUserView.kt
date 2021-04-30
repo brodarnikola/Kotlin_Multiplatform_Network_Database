@@ -1,4 +1,4 @@
-package com.example.firstmultiplatformproject.android.presentation.login
+package com.example.firstmultiplatformproject.android.presentation.ui.login
 
 /**
  * User details post authentication that is exposed to the UI

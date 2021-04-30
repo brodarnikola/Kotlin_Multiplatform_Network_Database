@@ -1,4 +1,4 @@
-package com.example.firstmultiplatformproject.android
+package com.example.firstmultiplatformproject.android.presentation.ui.main_activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.firstmultiplatformproject.android.presentation.login.LoginActivity
+import com.example.firstmultiplatformproject.android.LaunchesRvAdapter
+import com.example.firstmultiplatformproject.android.R
+import com.example.firstmultiplatformproject.android.presentation.ui.login.LoginActivity
 import com.example.firstmultiplatformproject.shared.Greeting
 import com.example.firstmultiplatformproject.shared.datasource.network.SpaceXSDK
 import com.example.firstmultiplatformproject.shared.datasource.cache.DriverFactory

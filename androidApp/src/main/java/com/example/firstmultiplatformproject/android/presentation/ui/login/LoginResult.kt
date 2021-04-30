@@ -1,4 +1,4 @@
-package com.example.firstmultiplatformproject.android.presentation.login
+package com.example.firstmultiplatformproject.android.presentation.ui.login
 
 /**
  * Authentication result : success (user details) or error message.

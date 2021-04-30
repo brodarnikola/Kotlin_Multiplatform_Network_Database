@@ -1,4 +1,4 @@
-package com.example.firstmultiplatformproject.android.presentation.login
+package com.example.firstmultiplatformproject.android.presentation.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
