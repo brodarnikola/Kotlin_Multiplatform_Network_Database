@@ -1,4 +1,4 @@
-package com.example.firstmultiplatformproject.android
+package com.example.firstmultiplatformproject.android.presentation.ui.main_activity
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.firstmultiplatformproject.android.R
 import com.example.firstmultiplatformproject.shared.entity.RocketLaunch
 
 class LaunchesRvAdapter(var launches: List<RocketLaunch>) : RecyclerView.Adapter<LaunchesRvAdapter.LaunchViewHolder>() {
@@ -37,14 +38,20 @@ class LaunchesRvAdapter(var launches: List<RocketLaunch>) : RecyclerView.Adapter
             if (launchSuccess != null ) {
                 if (launchSuccess) {
                     launchSuccessTextView.text = ctx.getString(R.string.successful)
-                    launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context, R.color.colorSuccessful)))
+                    launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context,
+                        R.color.colorSuccessful
+                    )))
                 } else {
                     launchSuccessTextView.text = ctx.getString(R.string.unsuccessful)
-                    launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context, R.color.colorUnsuccessful)))
+                    launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context,
+                        R.color.colorUnsuccessful
+                    )))
                 }
             } else {
                 launchSuccessTextView.text = ctx.getString(R.string.no_data)
-                launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context, R.color.colorNoData)))
+                launchSuccessTextView.setTextColor((ContextCompat.getColor(itemView.context,
+                    R.color.colorNoData
+                )))
             }
         }
     }

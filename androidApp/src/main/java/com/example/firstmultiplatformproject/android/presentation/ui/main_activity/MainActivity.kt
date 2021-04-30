@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.firstmultiplatformproject.android.LaunchesRvAdapter
 import com.example.firstmultiplatformproject.android.R
 import com.example.firstmultiplatformproject.android.presentation.ui.login.LoginActivity
 import com.example.firstmultiplatformproject.shared.Greeting
