@@ -40,7 +40,7 @@ class SearchRecipes(
             }
 
             // Convert: NetworkRecipeEntity -> Recipe -> RecipeCacheEntity
-            val recipes = getRecipesFromNetwork(
+            val recipes: List<Recipe> = getRecipesFromNetwork(
                 token = token,
                 page = page,
                 query = query,
@@ -66,7 +66,7 @@ class SearchRecipes(
 
             // query the cache
             val cacheResult = if (query.isBlank()) {
-                queries .getAllRecipes(
+                queries.getAllRecipes(
                     pageSize = RECIPE_PAGINATION_PAGE_SIZE.toLong(),
                     page = page.toLong()
                 )

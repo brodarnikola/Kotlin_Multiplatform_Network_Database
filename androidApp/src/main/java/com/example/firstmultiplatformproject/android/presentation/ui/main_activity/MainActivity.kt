@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.firstmultiplatformproject.android.R
+import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.HiltComposeRecipeActivity
 import com.example.firstmultiplatformproject.android.presentation.ui.login.LoginActivity
 import com.example.firstmultiplatformproject.shared.Greeting
 import com.example.firstmultiplatformproject.shared.datasource.network.SpaceXSDK
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var scrollToTop: FloatingActionButton
     private lateinit var btnLogin: Button
+    private lateinit var btnHiltCompose: Button
     private lateinit var launchesRecyclerView: RecyclerView
     private lateinit var progressBarView: FrameLayout
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -47,15 +51,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    @ExperimentalMaterialApi
+    @ExperimentalComposeUiApi
     override fun onStart() {
         super.onStart()
 
         initializeUi()
     }
 
+    @ExperimentalMaterialApi
+    @ExperimentalComposeUiApi
     private fun initializeUi() {
 
         btnLogin = findViewById(R.id.btnLogin)
+        btnHiltCompose = findViewById(R.id.btnHiltCompose)
         launchesRecyclerView = findViewById(R.id.launchesListRv)
         progressBarView = findViewById(R.id.progressBar)
         swipeRefreshLayout = findViewById(R.id.swipeContainer)
@@ -69,10 +78,17 @@ class MainActivity : AppCompatActivity() {
         displayLaunches(false)
     }
 
+    @ExperimentalMaterialApi
+    @ExperimentalComposeUiApi
     private fun initalizeScreenEventsListeners() {
 
         btnLogin.setOnClickListener {
             val loginIntent = Intent(this, LoginActivity::class.java)
+            startActivity(loginIntent)
+        }
+
+        btnHiltCompose.setOnClickListener {
+            val loginIntent = Intent(this, HiltComposeRecipeActivity::class.java)
             startActivity(loginIntent)
         }
 
