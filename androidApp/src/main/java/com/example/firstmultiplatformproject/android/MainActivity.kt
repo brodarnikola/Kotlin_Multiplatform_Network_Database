@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.firstmultiplatformproject.android.ui.login.LoginActivity
+import com.example.firstmultiplatformproject.android.presentation.login.LoginActivity
 import com.example.firstmultiplatformproject.shared.Greeting
-import com.example.firstmultiplatformproject.shared.SpaceXSDK
-import com.example.firstmultiplatformproject.shared.cache.DatabaseDriverFactory
+import com.example.firstmultiplatformproject.shared.datasource.network.SpaceXSDK
+import com.example.firstmultiplatformproject.shared.datasource.cache.DriverFactory
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var progressBarView: FrameLayout
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
-    private val sdk = SpaceXSDK(DatabaseDriverFactory(this))
+    private val sdk = SpaceXSDK(DriverFactory(this))
 
     private val launchesRvAdapter = LaunchesRvAdapter(listOf())
 

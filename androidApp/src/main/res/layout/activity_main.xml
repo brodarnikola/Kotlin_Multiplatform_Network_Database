@@ -52,7 +52,7 @@
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is multiplatform example. I have practice with network(ktor), database(sqldelight), viewmodel(login example)."
+            android:text="This is multiplatform example. I have practice network(ktor), database(sqldelight), hilt(DI), compose, viewmodel(hilt DI)."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

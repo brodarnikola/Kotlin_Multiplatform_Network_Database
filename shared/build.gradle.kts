@@ -41,7 +41,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.1.1")
-                //implementation( "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0-RC")
+                //implementation( "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
@@ -93,7 +93,7 @@ android {
 }
 
 sqldelight {
-    database("AppDatabase") {
+    database("RecipeDatabase") {
         packageName = "com.example.firstmultiplatformproject.shared.cache"
     }
 }
