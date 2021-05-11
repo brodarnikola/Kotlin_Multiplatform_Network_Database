@@ -56,5 +56,8 @@ class HiltComposeRecipeActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
+
+
 }

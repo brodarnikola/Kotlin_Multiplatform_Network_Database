@@ -1,6 +1,5 @@
 package com.example.firstmultiplatformproject.android.presentation.components
 
-import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,13 +7,11 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCompositionContext
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
+import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.BatteryStatus
 import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.HiltComposeRecipeActivity
-import com.example.firstmultiplatformproject.android.presentation.ui.main_activity.MainActivity
 import com.example.firstmultiplatformproject.shareddomain.model.Recipe
 import com.example.firstmultiplatformproject.sharednavigation.Screen
 import com.example.firstmultiplatformproject.sharedutil.RECIPE_PAGINATION_PAGE_SIZE
@@ -32,18 +29,17 @@ fun RecipeList(
     onTriggerNextPage: () -> Unit,
     onNavigateToRecipeDetailScreen: (String) -> Unit,
     context: HiltComposeRecipeActivity
-){
-    Box(modifier = Modifier
-        .background(color = MaterialTheme.colors.surface)
+) {
+    Box(
+        modifier = Modifier
+            .background(color = MaterialTheme.colors.surface)
     ) {
         if (loading && recipes.isEmpty()) {
-            LoadingRecipeListShimmer(imageHeight = 250.dp,)
-        }
-        else if(recipes.isEmpty()){
+            LoadingRecipeListShimmer(imageHeight = 250.dp)
+        } else if (recipes.isEmpty()) {
             NothingHere()
-        }
-        else {
-            LazyColumn{
+        } else {
+            LazyColumn {
                 itemsIndexed(
                     items = recipes
                 ) { index, recipe ->
@@ -66,5 +62,8 @@ fun RecipeList(
                 }
             }
         }
+        BatteryStatus(context)
     }
+
+
 }

@@ -22,7 +22,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 
-    val composeVersion = "1.0.0-beta03"
+    val composeVersion = "1.0.0-beta06"
     implementation("androidx.compose.ui:ui:${composeVersion}")
     implementation("androidx.compose.material:material:${composeVersion}")
     implementation("androidx.compose.ui:ui-tooling:${composeVersion}")
@@ -73,7 +73,8 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.0-beta03"
+        kotlinCompilerExtensionVersion = "1.0.0-beta06"
+        kotlinCompilerVersion = "${rootProject.extra["kotlin_version"]}"
     }
 
 }

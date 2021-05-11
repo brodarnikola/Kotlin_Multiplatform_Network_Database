@@ -8,6 +8,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import com.example.firstmultiplatformproject.android.presentation.components.RecipeList
 import com.example.firstmultiplatformproject.android.presentation.components.SearchAppBar
 import com.example.firstmultiplatformproject.android.presentation.theme.AppTheme
+import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.BatteryStatus
 import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.HiltComposeRecipeActivity
 import com.example.firstmultiplatformproject.sharedpresentation.ui.recipe_list.RecipeListEvent
 import kotlinx.coroutines.ExperimentalCoroutinesApi
