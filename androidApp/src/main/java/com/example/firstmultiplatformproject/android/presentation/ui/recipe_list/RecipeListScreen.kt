@@ -8,6 +8,7 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import com.example.firstmultiplatformproject.android.presentation.components.RecipeList
 import com.example.firstmultiplatformproject.android.presentation.components.SearchAppBar
 import com.example.firstmultiplatformproject.android.presentation.theme.AppTheme
+import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.HiltComposeRecipeActivity
 import com.example.firstmultiplatformproject.sharedpresentation.ui.recipe_list.RecipeListEvent
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -20,6 +21,7 @@ fun RecipeListScreen(
   onToggleTheme: () -> Unit,
   onNavigateToRecipeDetailScreen: (String) -> Unit,
   viewModel: RecipeListViewModel,
+  context: HiltComposeRecipeActivity,
 ) {
   val recipes = viewModel.recipes.value
 
@@ -68,7 +70,8 @@ fun RecipeListScreen(
         onChangeScrollPosition = viewModel::onChangeRecipeScrollPosition,
         page = page,
         onTriggerNextPage = { viewModel.onTriggerEvent(RecipeListEvent.NextPageEvent) },
-        onNavigateToRecipeDetailScreen = onNavigateToRecipeDetailScreen
+        onNavigateToRecipeDetailScreen = onNavigateToRecipeDetailScreen,
+        context = context
       )
     }
   }

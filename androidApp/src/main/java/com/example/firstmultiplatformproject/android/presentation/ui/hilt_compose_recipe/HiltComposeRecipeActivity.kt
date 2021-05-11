@@ -37,6 +37,7 @@ class HiltComposeRecipeActivity : AppCompatActivity() {
                         onToggleTheme = {},
                         onNavigateToRecipeDetailScreen = navController::navigate,
                         viewModel = viewModel,
+                        context = this@HiltComposeRecipeActivity
                     )
                 }
                 composable(

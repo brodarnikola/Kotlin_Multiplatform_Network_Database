@@ -1,5 +1,6 @@
 package com.example.firstmultiplatformproject.android.presentation.components
 
+import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.lazy.LazyColumn
@@ -7,13 +8,19 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCompositionContext
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+import com.example.firstmultiplatformproject.android.presentation.ui.hilt_compose_recipe.HiltComposeRecipeActivity
+import com.example.firstmultiplatformproject.android.presentation.ui.main_activity.MainActivity
 import com.example.firstmultiplatformproject.shareddomain.model.Recipe
 import com.example.firstmultiplatformproject.sharednavigation.Screen
 import com.example.firstmultiplatformproject.sharedutil.RECIPE_PAGINATION_PAGE_SIZE
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalComposeUiApi
 @ExperimentalMaterialApi
 @ExperimentalCoroutinesApi
 @Composable
@@ -24,6 +31,7 @@ fun RecipeList(
     page: Int,
     onTriggerNextPage: () -> Unit,
     onNavigateToRecipeDetailScreen: (String) -> Unit,
+    context: HiltComposeRecipeActivity
 ){
     Box(modifier = Modifier
         .background(color = MaterialTheme.colors.surface)
@@ -48,6 +56,11 @@ fun RecipeList(
                         onClick = {
                             val route = Screen.RecipeDetail.route + "/${recipe.id}"
                             onNavigateToRecipeDetailScreen(route)
+
+                            //example of using classic navigation betweeen activities with Intent
+//                            val intent = Intent( context, MainActivity::class.java )
+//                            context.startActivity(intent)
+//                            context.finish()
                         }
                     )
                 }
