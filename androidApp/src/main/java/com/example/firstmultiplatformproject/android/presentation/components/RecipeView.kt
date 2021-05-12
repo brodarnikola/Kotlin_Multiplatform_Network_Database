@@ -53,7 +53,7 @@ fun RecipeView(
                     )
                     val rank = recipe.rating.toString()
                     Text(
-                        text = rank,
+                        text = "Rating: " + rank,
                         modifier = Modifier
                             .fillMaxWidth()
                             .wrapContentWidth(Alignment.End)
