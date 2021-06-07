@@ -17,6 +17,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoroutinesApi
 @Composable
 fun RecipeCard(
+    index: Int,
     recipe: Recipe,
     onClick: () -> Unit,
 ) {
@@ -44,12 +45,24 @@ fun RecipeCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 12.dp, bottom = 12.dp, start = 8.dp, end = 8.dp)
+                    .padding(top = 5.dp, bottom = 5.dp, start = 8.dp, end = 8.dp)
+            ) {
+                Text(
+                    text = "Index: ${index + 1}",
+                    modifier = Modifier
+                        .wrapContentWidth(Alignment.Start),
+                    style = MaterialTheme.typography.h5
+                )
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 5.dp, bottom = 5.dp, start = 8.dp, end = 8.dp)
             ) {
                 Text(
                     text = recipe.title,
                     modifier = Modifier
-                        .fillMaxWidth(0.85f)
+                        .fillMaxWidth(0.75f)
                         .wrapContentWidth(Alignment.Start),
                     style = MaterialTheme.typography.h3
                 )

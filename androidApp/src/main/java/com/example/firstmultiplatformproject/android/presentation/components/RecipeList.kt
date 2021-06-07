@@ -48,6 +48,7 @@ fun RecipeList(
                         onTriggerNextPage()
                     }
                     RecipeCard(
+                        index = index,
                         recipe = recipe,
                         onClick = {
                             val route = Screen.RecipeDetail.route + "/${recipe.id}"
